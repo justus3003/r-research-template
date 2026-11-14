@@ -1,4 +1,4 @@
-# R Blueprint (slim)
+# R Blueprint
 
 Lightweight template for **analysis projects** in R: plain scripts instead of a package.
 Tooling: **rv** (packages), **air** (formatter), **jarl** (linter), **Quarto** (reports),
