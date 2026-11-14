@@ -1,0 +1,23 @@
+---
+title: "Example report"
+---
+
+## Load code and data
+
+```{r}
+#| label: setup
+source(here::here("R", "helpers.R"))
+data <- read.csv(here::here("data", "mtcars_clean.csv"))
+```
+
+## Average fuel consumption per cylinder count
+
+```{r}
+#| label: summary
+mean_by_group(data, value = "mpg", group = "cyl")
+```
+
+```{r}
+#| label: plot
+boxplot(mpg ~ cyl, data = data, xlab = "Cylinders", ylab = "Miles per gallon")
+```

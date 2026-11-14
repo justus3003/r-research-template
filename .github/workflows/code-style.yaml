@@ -1,0 +1,38 @@
+name: Code Style
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: ["*"]
+  workflow_dispatch:
+
+jobs:
+  formatting:
+    name: air
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install air
+        uses: posit-dev/setup-air@v1
+
+      - name: 🔍 Check formatting
+        run: air format . --check
+
+  linting:
+    name: jarl
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install jarl
+        run: |
+          curl --proto '=https' --tlsv1.2 -LsSf https://github.com/etiennebacher/jarl/releases/latest/download/jarl-installer.sh | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          echo "$HOME/.cargo/bin" >> "$GITHUB_PATH"
+
+      - name: 🔍 Run jarl
+        run: jarl check .

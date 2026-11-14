@@ -1,0 +1,15 @@
+[project]
+name = "blueprint-slim"
+r_version = "4.5"
+
+# Order matters. For full reproducibility, use a dated snapshot instead of "latest".
+repositories = [
+    { alias = "PPM", url = "https://packagemanager.posit.co/cran/latest" },
+]
+
+dependencies = [
+    "here",
+    # needed by Quarto to run R code
+    "knitr",
+    "rmarkdown",
+]

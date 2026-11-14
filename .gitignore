@@ -1,0 +1,21 @@
+# R
+.Rhistory
+.RData
+.Rapp.history
+.Rproj.user/
+
+# rv: do not version the library (scripts and rv.lock are versioned)
+rv/library/
+
+# Quarto
+.quarto/
+analysis/_output/
+analysis/*_files/
+
+# Environment and secrets
+.env
+.Renviron
+
+# Editor
+.idea/
+.DS_Store
