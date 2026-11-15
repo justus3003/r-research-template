@@ -1,6 +1,6 @@
 # R Blueprint
 
-Lightweight template for **analysis projects** in R: plain scripts instead of a package.
+Lightweight template for **analysis projects** in R.
 Tooling: **rv** (packages), **air** (formatter), **jarl** (linter), **Quarto** (reports),
 **prek/pre-commit** (Git hooks) and **GitHub Actions**.
 
@@ -55,4 +55,4 @@ so they work no matter where a script or document is started from.
 - **CI:** The composite action `setup-r-env` installs rv via its install script and points `R_LIBS` at the rv library.
   The jarl installer URL in `.github/workflows/code-style.yaml` is derived from the release naming pattern. Check it against
   https://jarl.etiennebacher.com and pin versions as needed.
-- **Tests:** Not included to keep this version small. If your functions grow, consider the package version of this template.
+- **Tests:** Not included to keep this version small. If your functions grow, consider the [package version of this template](https://github.com/justus3003/r-project-template).
